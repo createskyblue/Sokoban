@@ -172,9 +172,11 @@ void setup() {
     arduboy.print(ERC);
     arduboy.print("!=");
     arduboy.println(byte(115 + 111 + 107 + 111 + 98 + 97 + 110));
-
     arduboy.display();
     //初始化EEPROM
+    for (int i = 0 ; i < EEPROM.length() ; i++) {
+      EEPROM.write(i, 0);
+    }
     EEPROM.write(0, 115);
     EEPROM.write(1, 111);
     EEPROM.write(2, 107);
@@ -182,10 +184,10 @@ void setup() {
     EEPROM.write(4, 98);
     EEPROM.write(5, 97);
     EEPROM.write(6, 110);
-    for (int i = 0; i < 1024; i++) {
-      EEPROM.write(i, 0);
+    ERC = 0;
+    for (int i = 0; i < 7; i++) {
+      ERC = EEPROM.read(i) + ERC;
     }
-    delay(2000);
     if (ERC != 0) resetFunc(); else arduboy.println(F("EEPROM writing error"));
     arduboy.display();
   }
@@ -210,40 +212,26 @@ void loop() {
     GMenu();
   }
   //键盘控制玩家部分
-  if (arduboy.pressed(UP_BUTTON)) {//上键激活
-    PlayerD = -16;//设置玩家方向 至于为什么是这个下面有讲 不用着急
-    if (RMAP[P - 16] == 0 || RMAP[P - 16] == 3 || RMAP[P - 16] == 4 || RMAP[P - 16] == 5 || RMAP[P - 16] == 6) {//检查对应位置是否可以走
-      LA = true;//移动合法 计算移动 是
-    } else {
-      draw();
-    }
-  } else {
-    if (arduboy.pressed(DOWN_BUTTON)) {//下键激活
-      PlayerD = 16;//设置玩家方向 至于为什么是这个下面有讲 不用着急
-      if (RMAP[P + 16] == 0 || RMAP[P + 16] == 3 || RMAP[P + 16] == 4 || RMAP[P + 16] == 5 || RMAP[P + 16] == 6)  { //检查对应位置是否可以走
-        LA = true;//移动合法 计算移动 是
-      } else {
-        draw();
-      }
-    } else {
-      if (arduboy.pressed(LEFT_BUTTON)) {//左键激活
-        PlayerD = -1; //设置玩家方向 至于为什么是这个下面有讲 不用着急
-        if (RMAP[P - 1] == 0 || RMAP[P - 1] == 3 || RMAP[P - 1] == 4 || RMAP[P - 1] == 5 || RMAP[P - 1] == 6)  {//检查对应位置是否可以走
-          LA = true;//移动合法 计算移动 是
-        } else {
-          draw();
-        }
-      } else {
-        if (arduboy.pressed(RIGHT_BUTTON)) { //右键激活
-          PlayerD = 1;//设置玩家方向 至于为什么是这个下面有讲 不用着急
-          if (RMAP[P + 1] == 0 || RMAP[P + 1] == 3 || RMAP[P + 1] == 4 || RMAP[P + 1] == 5 || RMAP[P + 1] == 6)  { //检查对应位置是否可以走
-            LA = true; //移动合法 计算移动 是
-          } else {
-            draw();
-          }
-        }
-      }
-    }
+  if (arduboy.pressed(UP_BUTTON)) {
+    PlayerD = -16;//设置玩家方向
+    if (RMAP[P - 16] == 0 || RMAP[P - 16] == 3 || RMAP[P - 16] == 4 || RMAP[P - 16] == 5 || RMAP[P - 16] == 6) {
+      LA = true;//移动合法
+    } else draw();
+  } else if (arduboy.pressed(DOWN_BUTTON)) {
+    PlayerD = 16;//设置玩家方向
+    if (RMAP[P + 16] == 0 || ( RMAP[P + 16] >= 3 && RMAP[P + 16] <= 6)) {
+      LA = true;//移动合法
+    } else draw();
+  } else if (arduboy.pressed(LEFT_BUTTON)) {
+    PlayerD = -1;//设置玩家方向
+    if (RMAP[P - 1] == 0 || RMAP[P - 1] == 3 || RMAP[P - 1] == 4 || RMAP[P - 1] == 5 || RMAP[P - 1] == 6)  {
+      LA = true;//移动合法
+    } else draw();
+  } else if (arduboy.pressed(RIGHT_BUTTON)) {
+    PlayerD = 1;//设置玩家方向
+    if (RMAP[P + 1] == 0 || RMAP[P + 1] == 3 || RMAP[P + 1] == 4 || RMAP[P + 1] == 5 || RMAP[P + 1] == 6)  { //检查对应位置是否可以走
+      LA = true; //移动合法
+    } else draw();
   }
 
 
@@ -251,7 +239,6 @@ void loop() {
                    移动逻辑判断
     =========================================================*/
   if (LA == true) {
-    Pstep++; //增加玩家步数
     //行动合法
     //如果脚下是空的
     if (RMAP[P] == 2) {
@@ -259,19 +246,23 @@ void loop() {
         //如果前方是空气
         RMAP[P + PlayerD] = 2;
         RMAP[P] = 0;
+        Pstep++; //增加玩家步数
       } else if (RMAP[P + PlayerD] == 4) {  //如果前方是标记
         RMAP[P + PlayerD] = 6;
         RMAP[P] = 0;
+        Pstep++; //增加玩家步数
       } else if (RMAP[P + PlayerD] == 5) {  //如果前面不是标记而是标记上有箱子
         //如果前方标签上的箱子前面是空气
         if (RMAP[P + 2 * PlayerD] == 0) {
           RMAP[P + 2 * PlayerD] = 3;
           RMAP[P + PlayerD] = 6;
           RMAP[P] = 0;
+          Pstep++; //增加玩家步数
         } else if (RMAP[P + 2 * PlayerD] == 4) {  //如果前方标签上的箱子前面是标签
           RMAP[P + 2 * PlayerD] = 5;
           RMAP[P + PlayerD] = 6;
           RMAP[P] = 0;
+          Pstep++; //增加玩家步数
         }
       } else if (RMAP[P + PlayerD] == 3) {  //前方是箱子
         //箱子前面是空气
@@ -279,37 +270,45 @@ void loop() {
           RMAP[P + 2 * PlayerD] = 3;
           RMAP[P + PlayerD] = 2;
           RMAP[P] = 0;
+          Pstep++; //增加玩家步数
         } else if (RMAP[P + 2 * PlayerD] == 4) {
           //箱子前面是标记
           RMAP[P + 2 * PlayerD] = 5;
           RMAP[P + PlayerD] = 2;
           RMAP[P] = 0;
+          Pstep++; //增加玩家步数
         }
       }
     } else if (RMAP[P] == 6) { //如果前面不是空气并且脚下有标记
       if (RMAP[P + PlayerD] == 0) {
         RMAP[P + PlayerD] = 2; //如果前方是空气
         RMAP[P] = 4;
+        Pstep++; //增加玩家步数
       } else  if (RMAP[P + PlayerD] == 4) { //如果前方依然是是标记
         RMAP[P + PlayerD] = 6;
         RMAP[P] = 4;
+        Pstep++; //增加玩家步数
       } else if (RMAP[P + 2 * PlayerD] == 0) { //如果前方标签上的箱子前面是空气
         RMAP[P + 2 * PlayerD] = 3;
-        RMAP[P + PlayerD] = 2;
+        RMAP[P + PlayerD] = 6;
         RMAP[P] = 4;
+        Pstep++; //增加玩家步数
       } else if (RMAP[P + 2 * PlayerD] == 4) {//如果前方标签上的箱子前面是标签
         RMAP[P + 2 * PlayerD] = 5;
         RMAP[P + PlayerD] = 6;
         RMAP[P] = 4;
+        Pstep++; //增加玩家步数
       } else if (RMAP[P + PlayerD] == 3) {//如果前方只有箱子，箱子前面但是脚下有标签
         if (RMAP[P + 2 * PlayerD] == 0) {  //箱子前面是空气
           RMAP[P + 2 * PlayerD] = 3;
-          RMAP[P + PlayerD] = 2;
+          RMAP[P + PlayerD] = 6;
           RMAP[P] = 4;
+          Pstep++; //增加玩家步数
         } else  if (RMAP[P + 2 * PlayerD] == 4) {//箱子前面是标签
           RMAP[P + 2 * PlayerD] = 5;
           RMAP[P + PlayerD] = 2;
           RMAP[P] = 4;
+          Pstep++; //增加玩家步数
         }
       }
     }
@@ -434,13 +433,31 @@ void DrawTag() {
                   下一关
   =========================================================*/
 void win() {
+  boolean NE = false;
+  //读取EEPROM
+  if (EEPROM.read(6 + CP) > Pstep || EEPROM.read(6 + CP) == 0) {
+    //破纪录
+    EEPROM.write(6 + CP, Pstep);
+    NE = true;
+  }
+
   arduboy.clear();                          //清空显存
-  DrawMap();                                //先渲染地图
-  arduboy.fillRect(3, 12, 86, 30, 0);       //画一个黑色的长方形 用于覆盖画面
-  arduboy.setCursor(11, 24);                //设置光标
-  arduboy.print("You Win");                 //打印 你赢了
+  arduboy.drawRect(4, 4, 124, 60, 1);
+  arduboy.drawLine(44, 4, 76, 4, 0);
+  arduboy.setCursor(52, 0);               //设置光标
+  arduboy.print(F("WIN"));                 //打印 你赢了
+  arduboy.setCursor(32, 16);
+  arduboy.print(F("Step "));
+  arduboy.print(Pstep);
+  arduboy.setCursor(32, 24);
+  arduboy.print(F("History "));
+  arduboy.print(EEPROM.read(6 + CP));
+  if (NE) {
+    arduboy.setCursor(32, 40);
+    arduboy.print(F("NEW RECORD"));
+  }
   arduboy.display();                        //把画面显示在OLED上
-  delay (1000);                             //等待一秒
+  while (!arduboy.pressed(A_BUTTON)) {}
   if (CP < ACP) {                           //如果当前关卡少于总关卡
     CP++;                                   //那么关卡数+1
   } else {                                  //否则如果是最后一关
@@ -450,11 +467,11 @@ void win() {
   arduboy.clear();
   DrawMap();
   arduboy.display();
-  loop();
+  delay(50);
 }
 
 void GMenu() {
-  while (arduboy.pressed(A_BUTTON)) {
+  while ((arduboy.pressed(A_BUTTON))) {
     arduboy.clear();                                        //清除显存
     DrawMap();                                              //渲染游戏地图
     arduboy.fillRect(88,  0, 40, 128, 0);                   //清空重绘区
