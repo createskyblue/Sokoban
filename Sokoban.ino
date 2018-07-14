@@ -290,22 +290,17 @@ void loop() {
         Pstep++; //增加玩家步数
       } else if (RMAP[P + 2 * PlayerD] == 0) { //如果前方标签上的箱子前面是空气
         RMAP[P + 2 * PlayerD] = 3;
-        RMAP[P + PlayerD] = 6;
+        RMAP[P + PlayerD] = 2;
         RMAP[P] = 4;
         Pstep++; //增加玩家步数
       } else if (RMAP[P + 2 * PlayerD] == 4) {//如果前方标签上的箱子前面是标签
         RMAP[P + 2 * PlayerD] = 5;
-        RMAP[P + PlayerD] = 6;
+        RMAP[P + PlayerD] = 2;
         RMAP[P] = 4;
         Pstep++; //增加玩家步数
       } else if (RMAP[P + PlayerD] == 3) {//如果前方只有箱子，箱子前面但是脚下有标签
         if (RMAP[P + 2 * PlayerD] == 0) {  //箱子前面是空气
           RMAP[P + 2 * PlayerD] = 3;
-          RMAP[P + PlayerD] = 6;
-          RMAP[P] = 4;
-          Pstep++; //增加玩家步数
-        } else  if (RMAP[P + 2 * PlayerD] == 4) {//箱子前面是标签
-          RMAP[P + 2 * PlayerD] = 5;
           RMAP[P + PlayerD] = 2;
           RMAP[P] = 4;
           Pstep++; //增加玩家步数
