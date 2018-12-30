@@ -174,6 +174,8 @@ void setup() {
   arduboy.boot();
   arduboy.invert(DisplayInvert);
   arduboy.drawSlowXYBitmap(0, 0, BOOT, 128, 64, 1);
+  arduboy.setCursor(2, 2);
+  arduboy.print(F("Sokoban\nBY LHW"));
   arduboy.display();
   byte ERC = 0; //EEProm Check
   //检查EEPROM
