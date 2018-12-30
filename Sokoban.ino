@@ -39,7 +39,7 @@ const uint8_t ManRight[] PROGMEM = {
 /*=========================================================
                          地图
   =========================================================*/
-const PROGMEM byte MAP[] = {
+const PROGMEM byte MAP[42][16][16] = {
   //LEVEL 1
   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 , 1 , 1 , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 , 4 , 1 , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 , 0, 1 , 1 , 1 , 1 , 0, 0, 0, 0, 0, 0, 0, 0, 1 , 1 , 1 , 3 , 0, 3 , 4 , 1 , 0, 0, 0, 0, 0, 0, 0, 0, 1 , 4 , 0, 3 , 2 , 1 , 1 , 1 , 0, 0, 0, 0, 0, 0, 0, 0, 1 , 1 , 1 , 1 , 3 , 1 , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 , 4 , 1 , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 , 1 , 1 , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
   //LEVEL 2
@@ -139,8 +139,6 @@ const PROGMEM byte MAP[] = {
   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 , 1 , 1 , 1 , 1 , 0, 0, 0, 0, 0, 0, 0, 1 , 1 , 1 , 1 , 1 , 0, 0, 0, 1 , 0, 0, 0, 0, 0, 0, 0, 1 , 0, 0, 4 , 0, 3 , 1 , 0, 1 , 0, 0, 0, 0, 0, 0, 0, 1 , 0, 1 , 4 , 5 , 0, 0, 0, 1 , 0, 0, 0, 0, 0, 0, 1 , 1 , 0, 5 , 4 , 1 , 3 , 0, 1 , 1 , 0, 0, 0, 0, 0, 0, 1 , 0, 3 , 0, 0, 3 , 0, 0, 1 , 0, 0, 0, 0, 0, 0, 0, 1 , 0, 0, 0, 1 , 1 , 0, 2 , 1 , 0, 0, 0, 0, 0, 0, 0, 1 , 1 , 1 , 1 , 1 , 1 , 1 , 1 , 1 , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
   //LEVEL 42
   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 , 1 , 1 , 1 , 1 , 0, 1 , 1 , 1 , 1 , 1 , 1 , 1 , 0, 0, 0, 1 , 0, 0, 0, 1 , 1 , 1 , 0, 0, 1 , 0, 0, 1 , 0, 0, 0, 1 , 0, 0, 3 , 0, 0, 0, 0, 3 , 0, 2 , 0, 1 , 0, 0, 0, 1 , 1 , 0, 1 , 3 , 1 , 1 , 4 , 1 , 1 , 0, 0, 1 , 0, 0, 0, 0, 1 , 0, 0, 4 , 4 , 4 , 5 , 4 , 0, 3 , 0, 1 , 0, 0, 0, 0, 1 , 0, 3 , 1 , 0, 1 , 4 , 1 , 0, 1 , 0, 1 , 0, 0, 0, 0, 1 , 1 , 0, 0, 0, 0, 3 , 0, 0, 0, 0, 1 , 0, 0, 0, 0, 0, 1 , 0, 0, 1 , 1 , 1 , 1 , 1 , 1 , 1 , 1 , 0, 0, 0, 0, 0, 1 , 1 , 1 , 1 , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-
-
   //0->空白
   //1->墙
   //2->人
@@ -153,21 +151,18 @@ const PROGMEM byte MAP[] = {
 /*=========================================================
                          变量
   =========================================================*/
+bool DisplayInvert = false;
 int Pstep; //玩家步数
 byte CP = 1; //关卡
-byte ACP = (sizeof(MAP) / sizeof(MAP[0])) / 256; //总关卡
-int RMAP[256]; //运行地图
-int Atmp; //缓存
-int Btmp; //缓存
-int Ctmp; //缓存
-byte DX;
-byte DY;
-byte P = 0; //玩家在地图中的位置
-char PlayerD = -16; //最后方向 默认2 也就是下
+byte ACP = 42;  //关卡总数
+int RMAP[16][16]; //运行地图
+byte DX, DY, CDX, CDY;
+byte PMX, PMY; //玩家在地图中的位置 0:x 1:y
+int CPDX, CPDY; //玩家朝向x和y轴
+byte PlayerD = 1; //最后方向 默认1 也就是下
 boolean LA = false; //行动是否合法
 boolean WIN = false; //检测是否通关
-int X = 1;
-int Y = 1;
+byte SBDPL[] = {1, 2};  //障碍物id
 /*====================================================================
                              软重启函数
   ====================================================================*/
@@ -176,7 +171,7 @@ void(* resetFunc) (void) = 0; //制造重启命令
                      只循环一次
   =========================================================*/
 void setup() {
-  //Serial.begin(115200);
+  Serial.begin(115200);
   arduboy.boot();
   arduboy.drawSlowXYBitmap(0, 0, BOOT, 128, 64, 1);
   arduboy.display();
@@ -218,16 +213,11 @@ void setup() {
   load_cp();   //把地图载入内存
   draw(); //渲染画面
 }
-/*=========================================================
-                     不停循环
-  =========================================================*/
 void loop() {
   LA = false;                           //是否刷新移动  否
-
-  if (arduboy.pressed(B_BUTTON)) {      //如果B键与A键按下 （B键作用是重置当前关卡）
+  if (arduboy.pressed(B_BUTTON)) {
     load_cp();                          //把当前关卡地图载入内存
     draw();                             //渲染画面
-    loop();                             //回到游戏循环 开始新一轮游戏
   }
 
   if (arduboy.pressed(A_BUTTON)) {      //打开菜单
@@ -235,104 +225,99 @@ void loop() {
   }
   //键盘控制玩家部分
   if (arduboy.pressed(UP_BUTTON)) {
-    PlayerD = -16;//设置玩家方向
-    if (RMAP[P - 16] == 0 || RMAP[P - 16] == 3 || RMAP[P - 16] == 4 || RMAP[P - 16] == 5 || RMAP[P - 16] == 6) {
-      LA = true;//移动合法
-    } else draw();
+    PlayerD = 0;//设置玩家方向
+    CPDX = 0;
+    CPDY = -1;
+    SBDP();
   } else if (arduboy.pressed(DOWN_BUTTON)) {
-    PlayerD = 16;//设置玩家方向
-    if (RMAP[P + 16] == 0 || ( RMAP[P + 16] >= 3 && RMAP[P + 16] <= 6)) {
-      LA = true;//移动合法
-    } else draw();
-  } else if (arduboy.pressed(LEFT_BUTTON)) {
-    PlayerD = -1;//设置玩家方向
-    if (RMAP[P - 1] == 0 || RMAP[P - 1] == 3 || RMAP[P - 1] == 4 || RMAP[P - 1] == 5 || RMAP[P - 1] == 6)  {
-      LA = true;//移动合法
-    } else draw();
-  } else if (arduboy.pressed(RIGHT_BUTTON)) {
     PlayerD = 1;//设置玩家方向
-    if (RMAP[P + 1] == 0 || RMAP[P + 1] == 3 || RMAP[P + 1] == 4 || RMAP[P + 1] == 5 || RMAP[P + 1] == 6)  { //检查对应位置是否可以走
-      LA = true; //移动合法
-    } else draw();
+    CPDX = 0;
+    CPDY = 1;
+    SBDP();
+  } else if (arduboy.pressed(LEFT_BUTTON)) {
+    PlayerD = 2;//设置玩家方向
+    CPDX = -1;
+    CPDY = 0;
+    SBDP();
+  } else if (arduboy.pressed(RIGHT_BUTTON)) {
+    PlayerD = 3;//设置玩家方向
+    CPDX = 1;
+    CPDY = 0;
+    SBDP();
   }
-
-
-  /*=========================================================
-                   移动逻辑判断
-    =========================================================*/
   if (LA == true) {
     //行动合法
     //如果脚下是空的
-    if (RMAP[P] == 2) {
-      if (RMAP[P + PlayerD] == 0) {
+    if (RMAP[PMX + CPDX * 0][PMY + CPDY * 0] == 2) {
+      if (RMAP[PMX + CPDX * 1][PMY + CPDY * 1] == 0) {
         //如果前方是空气
-        RMAP[P + PlayerD] = 2;
-        RMAP[P] = 0;
+        RMAP[PMX + CPDX * 1][PMY + CPDY * 1] = 2;
+        RMAP[PMX + CPDX * 0][PMY + CPDY * 0] = 0;
         Pstep++; //增加玩家步数
-      } else if (RMAP[P + PlayerD] == 4) {  //如果前方是标记
-        RMAP[P + PlayerD] = 6;
-        RMAP[P] = 0;
+      } else if (RMAP[PMX + CPDX * 1][PMY + CPDY * 1] == 4) {  //如果前方是标记
+        RMAP[PMX + CPDX * 1][PMY + CPDY * 1] = 6;
+        RMAP[PMX + CPDX * 0][PMY + CPDY * 0] = 0;
         Pstep++; //增加玩家步数
-      } else if (RMAP[P + PlayerD] == 5) {  //如果前面不是标记而是标记上有箱子
+      } else if (RMAP[PMX + CPDX * 1][PMY + CPDY * 1] == 5) {  //如果前面不是标记而是标记上有箱子
         //如果前方标签上的箱子前面是空气
-        if (RMAP[P + 2 * PlayerD] == 0) {
-          RMAP[P + 2 * PlayerD] = 3;
-          RMAP[P + PlayerD] = 6;
-          RMAP[P] = 0;
+        if (RMAP[PMX + CPDX * 2][PMY + CPDY * 2] == 0) {
+          RMAP[PMX + CPDX * 2][PMY + CPDY * 2] = 3;
+          RMAP[PMX + CPDX * 1][PMY + CPDY * 1] = 6;
+          RMAP[PMX + CPDX * 0][PMY + CPDY * 0] = 0;
           Pstep++; //增加玩家步数
-        } else if (RMAP[P + 2 * PlayerD] == 4) {  //如果前方标签上的箱子前面是标签
-          RMAP[P + 2 * PlayerD] = 5;
-          RMAP[P + PlayerD] = 6;
-          RMAP[P] = 0;
+        } else if (RMAP[PMX + CPDX * 2][PMY + CPDY * 2] == 4) {  //如果前方标签上的箱子前面是标签
+          RMAP[PMX + CPDX * 2][PMY + CPDY * 2] = 5;
+          RMAP[PMX + CPDX * 1][PMY + CPDY * 1] = 6;
+          RMAP[PMX + CPDX * 0][PMY + CPDY * 0] = 0;
           Pstep++; //增加玩家步数
         }
-      } else if (RMAP[P + PlayerD] == 3) {  //前方是箱子
+      } else if (RMAP[PMX + CPDX * 1][PMY + CPDY * 1] == 3) {  //前方是箱子
         //箱子前面是空气
-        if (RMAP[P + 2 * PlayerD] == 0) {
-          RMAP[P + 2 * PlayerD] = 3;
-          RMAP[P + PlayerD] = 2;
-          RMAP[P] = 0;
+        if (RMAP[PMX + CPDX * 2][PMY + CPDY * 2] == 0) {
+          RMAP[PMX + CPDX * 2][PMY + CPDY * 2] = 3;
+          RMAP[PMX + CPDX * 1][PMY + CPDY * 1] = 2;
+          RMAP[PMX + CPDX * 0][PMY + CPDY * 0] = 0;
           Pstep++; //增加玩家步数
-        } else if (RMAP[P + 2 * PlayerD] == 4) {
+        } else if (RMAP[PMX + CPDX * 2][PMY + CPDY * 2] == 4) {
           //箱子前面是标记
-          RMAP[P + 2 * PlayerD] = 5;
-          RMAP[P + PlayerD] = 2;
-          RMAP[P] = 0;
+          RMAP[PMX + CPDX * 2][PMY + CPDY * 2] = 5;
+          RMAP[PMX + CPDX * 1][PMY + CPDY * 1] = 2;
+          RMAP[PMX + CPDX * 0][PMY + CPDY * 0] = 0;
           Pstep++; //增加玩家步数
         }
       }
-    } else if (RMAP[P] == 6) { //如果前面不是空气并且脚下有标记
-      if (RMAP[P + PlayerD] == 0) {
-        RMAP[P + PlayerD] = 2; //如果前方是空气
-        RMAP[P] = 4;
+    } else if (RMAP[PMX + CPDX * 0][PMY + CPDY * 0] == 6) { //如果前面不是空气并且脚下有标记
+      if (RMAP[PMX + CPDX * 1][PMY + CPDY * 1] == 0) {
+        RMAP[PMX + CPDX * 1][PMY + CPDY * 1] = 2; //如果前方是空气
+        RMAP[PMX + CPDX * 0][PMY + CPDY * 0] = 4;
         Pstep++; //增加玩家步数
-      } else  if (RMAP[P + PlayerD] == 4) { //如果前方依然是是标记
-        RMAP[P + PlayerD] = 6;
-        RMAP[P] = 4;
+      } else  if (RMAP[PMX + CPDX * 1][PMY + CPDY * 1] == 4) { //如果前方依然是是标记
+        RMAP[PMX + CPDX * 1][PMY + CPDY * 1] = 6;
+        RMAP[PMX + CPDX * 0][PMY + CPDY * 0] = 4;
         Pstep++; //增加玩家步数
-      } else if (RMAP[P + PlayerD] == 5) {
-        if (RMAP[P + 2 * PlayerD] == 0) { //如果前方标签上的箱子前面是空气
-          RMAP[P + 2 * PlayerD] = 3;
-          RMAP[P + PlayerD] = 6;
-          RMAP[P] = 4;
+      } else if (RMAP[PMX + CPDX * 1][PMY + CPDY * 1] == 5) {
+        if (RMAP[PMX + CPDX * 2][PMY + CPDY * 2] == 0) { //如果前方标签上的箱子前面是空气
+          RMAP[PMX + CPDX * 2][PMY + CPDY * 2] = 3;
+          RMAP[PMX + CPDX * 1][PMY + CPDY * 1] = 6;
+          RMAP[PMX + CPDX * 0][PMY + CPDY * 0] = 4;
           Pstep++; //增加玩家步数
-        } else if (RMAP[P + 2 * PlayerD] == 4) {//如果前方标签上的箱子前面是标签
-          RMAP[P + 2 * PlayerD] = 5;
-          RMAP[P + PlayerD] = 6;
-          RMAP[P] = 4;
+        } else if (RMAP[PMX + CPDX * 2][PMY + CPDY * 2] == 4) {//如果前方标签上的箱子前面是标签
+          RMAP[PMX + CPDX * 2][PMY + CPDY * 2] = 5;
+          RMAP[PMX + CPDX * 1][PMY + CPDY * 1] = 6;
+          RMAP[PMX + CPDX * 0][PMY + CPDY * 0] = 4;
           Pstep++; //增加玩家步数
         }
         Pstep++; //增加玩家步数
-      } else if (RMAP[P + PlayerD] == 3) {//如果前方只有箱子，箱子前面但是脚下有标签
-        if (RMAP[P + 2 * PlayerD] == 0) {  //箱子前面是空气
-          RMAP[P + 2 * PlayerD] = 3;
-          RMAP[P + PlayerD] = 2;
-          RMAP[P] = 4;
+      } else if (RMAP[PMX + CPDX * 1][PMY + CPDY * 1] == 3) {//如果前方只有箱子，箱子前面但是脚下有标签
+        if (RMAP[PMX + CPDX * 2][PMY + CPDY * 2] == 0) {  //箱子前面是空气
+          RMAP[PMX + CPDX * 2][PMY + CPDY * 2] = 3;
+          RMAP[PMX + CPDX * 1][PMY + CPDY * 1] = 2;
+          RMAP[PMX + CPDX * 0][PMY + CPDY * 0] = 4;
           Pstep++; //增加玩家步数
-        } else  if (RMAP[P + 2 * PlayerD] == 4) {//箱子前面是标签
-          RMAP[P + 2 * PlayerD] = 5;
-          RMAP[P + PlayerD] = 2;
-          RMAP[P] = 4;
+        } else  if (RMAP[PMX + CPDX * 2][PMY + CPDY * 2] == 4) {//箱子前面是标签
+          RMAP[PMX + CPDX * 2][PMY + CPDY * 2] = 5;
+          RMAP[PMX + CPDX * 1][PMY + CPDY * 1] = 2;
+          RMAP[PMX + CPDX * 0][PMY + CPDY * 0] = 4;
           Pstep++; //增加玩家步数
         }
       }
@@ -342,101 +327,107 @@ void loop() {
   }
   if (WIN == true) win(); //检测到通关 调用通关函数
 }
-/*=========================================================
-                  显示
-  =========================================================*/
+void SBDP() {
+  LA = true;
+  byte length = sizeof(SBDPL) / sizeof(SBDPL[0]);
+  for (byte i = 0; i < length; i++) {
+    if (RMAP[PMX + CPDX * 1][PMY + CPDY * 1] == SBDPL[i]) LA = false;
+  }
+}
 void draw() {
   arduboy.clear();                                        //清除显存
   DrawMap();                                              //渲染游戏地图
   arduboy.display();                                      //把画面显示到OLED上
 }
-/*=========================================================
-                  载入当前关卡
-  =========================================================*/
 void load_cp() {
   Pstep = 0; //清空玩家步数
-  Atmp = 0;                                               //初始化写入地图内存的位置
-  Ctmp = (CP - 1) * 256;                                  //设置读取地图结束位置
-  for (Btmp = Ctmp; Btmp <= Ctmp + 255; Btmp++) {         //循环读取
-    RMAP[Atmp] = pgm_read_byte_near(MAP + Btmp);          //读取相对应位置的地图，写入当前关卡地图内存
-    Atmp++;                                               //地图内存地址位置+1
+  for (byte MapReadY = 0; MapReadY < 16; MapReadY++) {
+    for (byte MapReadX = 0; MapReadX < 16; MapReadX++) {
+      RMAP[MapReadX][MapReadY] = pgm_read_byte(&MAP[CP - 1][MapReadY][MapReadX]);
+    }
   }
 }
-/*=========================================================
-                  载入当前区块
-  =========================================================*/
 void DrawMap() {
-  DX = 0;
-  DY = 0;
-  /*=========================================================
-           遍历内存检查玩家位置和通关情况
-    =========================================================*/
   WIN = true;//假设玩家通关
-  for (int i = 0; i <= 255; i++) {              //遍历关卡地图内存;0到255有256个数字,因为规定一关地图大小为16x16所以为256
-    if (RMAP[i] == 2) {                         //当前是玩家所在的位置 重设玩家所在地图位置
-      P = i;
-    } else {
-      if (RMAP[i] == 6) P = i;                  //当前是玩家所在的位置 重设玩家所在地图位置
+  for (byte MapReadY = 0; MapReadY < 16; MapReadY++) {
+    for (byte MapReadX = 0; MapReadX < 16; MapReadX++) {
+      switch (RMAP[MapReadX][MapReadY]) {
+        case 2:
+          PMX = MapReadX;   //当前是玩家所在的位置 重设玩家所在地图位置
+          PMY = MapReadY;
+          break;
+        case 3:
+          WIN = false;   //检测到没有放在指定位置的箱子 表明玩家没有通关
+          break;
+        case 6:
+          PMX = MapReadX;   //当前是玩家所在的位置 重设玩家所在地图位置
+          PMY = MapReadY;
+          break;
+      }
     }
-    if (RMAP[i] == 3) WIN = false;              //检测到没有放在指定位置的箱子 表明玩家没有通关
   }
-  Atmp = P - 36;                                //视野地图最开始的位置 是关卡地图(16x16大地图)中 玩家位置-19的地方，可以参考下图颜色加深位置（119-110=19）说白了，这个是用来放视野地图最开始的方块在大地图中的位置
-  int i = 0;                                    //i为视野地图LMAP的位置 初始化为0
-  for (Btmp = P - 36; Btmp <= P + 36; Btmp++) {
-    if (Btmp >= Atmp + 9) {
-      Btmp += 7;
-      Atmp += 16;
+  int MapReadLimit[4]; //显示地图缓存读取范围 防止溢出死循环
+  MapReadLimit[0] = PMX - 4;
+  MapReadLimit[1] = PMX + 5;
+  MapReadLimit[2] = PMY - 2;
+  MapReadLimit[3] = PMY + 3;
+  if (MapReadLimit[0] < 0) CDX = 15 * (-MapReadLimit[0]); else CDX = 0;
+  if (MapReadLimit[2] < 0) CDY = 15 * (-MapReadLimit[2]); else CDY = 0;
+  DX = CDX;
+  DY = CDY;
+  for (byte i = 0; i < 4; i++) {
+    if (MapReadLimit[i] < 0) MapReadLimit[i] = 0; else if (MapReadLimit[i] > 15) MapReadLimit[i] = 15;
+  }
+  for (byte MapReadY = MapReadLimit[2]; MapReadY < MapReadLimit[3]; MapReadY++) {
+    for (byte MapReadX = MapReadLimit[0]; MapReadX < MapReadLimit[1]; MapReadX++) {
+      //0->空白
+      //1->墙
+      //2->人
+      //3->箱子
+      //4->位置
+      //5->放到正确位置的箱子
+      //6->在标签上的人
+      switch (RMAP[MapReadX][MapReadY]) {
+        case 1:
+          //画墙
+          arduboy.fillRect(DX - 6,  DY - 6, 16, 16, 0);                                 //清空重绘区
+          arduboy.drawLine(DX, DY + 10, DX, DY + 14, BLACK);                            //处理渲染错误的线条
+          arduboy.drawLine(DX + 10, DY, DX + 14, DY, BLACK);                            //处理渲染错误的线条
+          arduboy.drawSlowXYBitmap(DX - 6, DY - 6,  WALL, 22, 22, 1);                   //显示墙的图片
+          break;
+        case 2:
+          DrawPlayer();                                                                 //显示玩家
+          break;
+        case 3:
+          DrawBox();                                                                    //显示箱子
+          break;
+        case 4:
+          DrawTag();                                                                    //在对应的位置画一个"X"
+          break;
+        case 5:
+          arduboy.drawSlowXYBitmap(DX - 6, DY - 6, OBOX, 22, 22, 1);                    //显示打开的箱子图片
+          break;
+        case 6:
+          DrawTag();
+          DrawPlayer();
+          break;
+      }
+      DX += 15;
     }
-    //0->空白
-    //1->墙
-    //2->人
-    //3->箱子
-    //4->位置
-    //5->放到正确位置的箱子
-    //6->在标签上的人
-    if (RMAP[Btmp] == 1) {                                                             //当前位置是墙
-      //画墙
-      arduboy.fillRect(DX - 6,  DY - 6, 16, 16, 0);                                 //清空重绘区
-      arduboy.drawLine(DX, DY + 10, DX, DY + 14, BLACK);                            //处理渲染错误的线条
-      arduboy.drawLine(DX + 10, DY, DX + 14, DY, BLACK);                            //处理渲染错误的线条
-      arduboy.drawSlowXYBitmap(DX - 6, DY - 6,  WALL, 22, 22, 1);                   //显示墙的图片
-    }
-    if (RMAP[Btmp] == 2 || RMAP[Btmp] == 6) {                                             //当前是玩家的位置
-      DrawPlayer();                                                                 //显示玩家
-    }
-    if (RMAP[Btmp] == 3) {                                                             //如果当前位置是箱子
-      DrawBox();                                                                    //显示箱子
-    }
-    if (RMAP[Btmp] == 5) {                                                             //当前位置是放到标记上的箱子
-      arduboy.drawSlowXYBitmap(DX - 6, DY - 6, OBOX, 22, 22, 1);                    //显示打开的箱子图片
-    }
-    if (RMAP[Btmp] == 4) {                                                             //当前位置是标记(“X”)
-      DrawTag();                                                                    //在对应的位置画一个"X"
-    }
-    DX += 15;
-    if (DX > 120) {
-      DX = 0;
-      DY += 15;
-    }
-    i++;                                        //视野地图位置+1
+    DX = CDX;
+    DY += 15;
   }
 }
-/*=========================================================
-                  绘图函数
-  =========================================================*/
 void DrawPlayer() {
   //画玩家
   arduboy.fillRect(DX - 1,  DY - 2, 16, 17, 0);                                   //清空重绘区
-
-  //-16为上 16为下 -1为左 +1为右 这样设定是因为地图是一个16x16的一维数组 为了获得相对应位置的地图方块信息要进行地图位置地址移位
-
-  if (PlayerD == -16) {                                                           //如果玩家方向为上
+  if (PlayerD == 0) {                                                           //如果玩家方向为上
     arduboy.drawSlowXYBitmap(DX - 6, DY - 6,  ManUp, 22, 22, 1);                  //玩家向上图片
   } else {
-    if (PlayerD == 16) {//如果玩家方向为下
+    if (PlayerD == 1) {//如果玩家方向为下
       arduboy.drawSlowXYBitmap(DX - 6, DY - 6, ManDown, 22, 22, 1);               //玩家向下图片
     } else {
-      if (PlayerD == -1) {//如果玩家方向为左
+      if (PlayerD == 2) {//如果玩家方向为左
         arduboy.drawSlowXYBitmap(DX - 6, DY - 6, ManLeft, 22, 22, 1);             //玩家向左图片
       } else {                                                                    //如果玩家方向不是上 也不是下 更不是左 （右）
         arduboy.drawSlowXYBitmap(DX - 6, DY - 6,  ManRight, 22, 22, 1);           //玩家向右图片
@@ -454,9 +445,7 @@ void DrawTag() {
   arduboy.drawLine(DX + 5, DY + 5, DX + 16, DY + 16, WHITE);
   arduboy.drawLine(DX + 16, DY + 5, DX + 5, DY + 16, WHITE);
 }
-/*=========================================================
-                  下一关
-  =========================================================*/
+
 void win() {
   boolean NE = false;
   //读取EEPROM
@@ -465,11 +454,10 @@ void win() {
     EEPROM.write(6 + CP, Pstep);
     NE = true;
   }
-
   arduboy.clear();                          //清空显存
-  arduboy.drawRect(4, 4, 124, 60, 1);
+  arduboy.drawRect(4, 4, 120, 56, 1);
   arduboy.drawLine(44, 4, 76, 4, 0);
-  arduboy.setCursor(52, 0);               //设置光标
+  arduboy.setCursor(52, 2);               //设置光标
   arduboy.print(F("WIN"));                 //打印 你赢了
   arduboy.setCursor(32, 16);
   arduboy.print(F("Step "));
@@ -494,12 +482,13 @@ void win() {
   arduboy.display();
   delay(50);
 }
-
 void GMenu() {
   while ((arduboy.pressed(A_BUTTON))) {
     arduboy.clear();                                        //清除显存
     DrawMap();                                              //渲染游戏地图
-    arduboy.fillRect(88,  0, 40, 128, 0);                   //清空重绘区
+    arduboy.fillRect(88,  0, 40, 128, 1);                   //清空重绘区
+    arduboy.setTextColor(0);
+    arduboy.setTextBackground(1);
     arduboy.setCursor(96, 8);                               //设置光标
     arduboy.print(F("Level"));                                      //显示当前关卡
     arduboy.setCursor(96, 16);                               //设置光标
@@ -510,6 +499,8 @@ void GMenu() {
     arduboy.print(F("Step"));
     arduboy.setCursor(96, 48);
     arduboy.print(Pstep);
+    arduboy.setTextColor(1);
+    arduboy.setTextBackground(0);
     if (arduboy.pressed(UP_BUTTON)) {   //上键与A键同时按下
       if (CP < ACP) CP++;               //如果不是最后一关 让关卡数+1
       load_cp();                               //把地图载入内存
@@ -518,7 +509,11 @@ void GMenu() {
       if (CP > 1) CP--;                 //如果不是第一关 让关卡数-1
       load_cp();                               //把地图载入内存
     }
-
+    if (arduboy.pressed(LEFT_BUTTON)) {
+      DisplayInvert = ! DisplayInvert;
+      arduboy.invert(DisplayInvert);
+      delay(50);
+    }
     arduboy.display();
   }
   arduboy.clear();
