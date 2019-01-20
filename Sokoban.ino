@@ -221,7 +221,6 @@ void loop() {
     load_cp();                          //把当前关卡地图载入内存
     draw();                             //渲染画面
   }
-
   if (arduboy.pressed(A_BUTTON)) {      //打开菜单
     GMenu();
   }
@@ -380,8 +379,8 @@ void DrawMap() {
   for (byte i = 0; i < 4; i++) {
     if (MapReadLimit[i] < 0) MapReadLimit[i] = 0; else if (MapReadLimit[i] > 15) MapReadLimit[i] = 15;
   }
-  for (byte MapReadY = MapReadLimit[2]; MapReadY < MapReadLimit[3]; MapReadY++) {
-    for (byte MapReadX = MapReadLimit[0]; MapReadX < MapReadLimit[1]; MapReadX++) {
+  for (byte MapReadY = MapReadLimit[2]; MapReadY <= MapReadLimit[3]; MapReadY++) {
+    for (byte MapReadX = MapReadLimit[0]; MapReadX <= MapReadLimit[1]; MapReadX++) {
       //0->空白
       //1->墙
       //2->人
